@@ -34,16 +34,17 @@ class Engine:
         if self.rpm > 0:
             temperature_increase = self.rpm / 1000
             self.cooling_rate = self.rpm / 1000 + 0.001
-            if self.rpm > 5000:
+            if self.rpm > 799 and self.rpm < 2000:
                 self.cooling_rate -= 0.0095
-            self.normal_temperature += temperature_increase
+                self.normal_temperature += temperature_increase
+                self.normal_temperature = 80
         
-        if self.normal_temperature > self.max_temperature:
+        if self.normal_temperature >= self.max_temperature:
                 print("Warning: Engine overheating!")
                 self.normal_temperature = self.max_temperature
         
-        else :
-            if self.normal_temperature > 30:  
+        #else :
+        if self.normal_temperature > 30:  
                 self.normal_temperature -= self.cooling_rate
         
 

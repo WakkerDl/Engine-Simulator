@@ -1,3 +1,7 @@
+import WaterPump
+import Generator
+import OilPump
+
 class Crankshaft:
     def __init__(self, flywheel_mass, rodJournals, mass,):
         self.flywheel_mass = flywheel_mass #Масса маховика
